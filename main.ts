@@ -10,15 +10,41 @@ radio.onReceivedNumber(function (receivedNumber) {
     // 2 軌道下降
     // 4 向左跑
     // 6 向右跑
-    if (receivedNumber == 1) {
-        open()
+    if (receivedNumber == 7) {
+        turn_left()
         basic.pause(100)
-    } else if (receivedNumber == 3) {
-        close()
+    } else if (receivedNumber == 9) {
+        turn_right()
         basic.pause(100)
+    } else {
+        stop()
     }
 })
+function turn_right () {
+    sensors.DDMmotor(
+    AnalogPin.P12,
+    1,
+    AnalogPin.P2,
+    255
+    )
+}
+function stop () {
+    sensors.DDMmotor(
+    AnalogPin.P12,
+    1,
+    AnalogPin.P2,
+    0
+    )
+}
 function close () {
     pins.servoWritePin(AnalogPin.P1, 0)
+}
+function turn_left () {
+    sensors.DDMmotor(
+    AnalogPin.P12,
+    0,
+    AnalogPin.P2,
+    255
+    )
 }
 radio.setGroup(173)
