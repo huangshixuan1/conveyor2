@@ -13,9 +13,23 @@ radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 7) {
         turn_left()
         basic.pause(100)
+        basic.showLeds(`
+            # # # . .
+            . . # . .
+            . # . . #
+            . # . # .
+            . # . . #
+            `)
     } else if (receivedNumber == 9) {
         turn_right()
         basic.pause(100)
+        basic.showLeds(`
+            . # . . .
+            # . # . .
+            # # # # .
+            . . # . #
+            # # . # .
+            `)
     } else {
         stop()
     }
