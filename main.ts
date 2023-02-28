@@ -12,17 +12,10 @@ radio.onReceivedNumber(function (receivedNumber) {
     // 6 向右跑
     if (receivedNumber == 7) {
         turn_left()
-        basic.pause(100)
+        basic.pause(25)
     } else if (receivedNumber == 9) {
         turn_right()
-        basic.pause(100)
-        basic.showLeds(`
-            . # . . .
-            # . # . .
-            # # # # .
-            . . # . #
-            # # . # .
-            `)
+        basic.pause(25)
     } else {
         stop()
     }
