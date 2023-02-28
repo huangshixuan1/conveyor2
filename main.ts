@@ -11,13 +11,16 @@ radio.onReceivedNumber(function (receivedNumber) {
     // 4 向左跑
     // 6 向右跑
     if (receivedNumber == 7) {
-        turn_left()
+        pins.servoWritePin(AnalogPin.P1, 0)
+        pins.servoWritePin(AnalogPin.P8, 0)
         basic.pause(25)
     } else if (receivedNumber == 9) {
-        turn_right()
+        pins.servoWritePin(AnalogPin.P1, 180)
+        pins.servoWritePin(AnalogPin.P8, 180)
         basic.pause(25)
     } else {
-        stop()
+        pins.servoWritePin(AnalogPin.P1, 90)
+        pins.servoWritePin(AnalogPin.P8, 90)
     }
 })
 function turn_right () {
