@@ -20,6 +20,8 @@ radio.onReceivedNumber(function (receivedNumber) {
             . # . # .
             . # . . #
             `)
+        basic.pause(50)
+        basic.clearScreen()
     } else if (receivedNumber == 9) {
         turn_right()
         basic.pause(100)
@@ -30,6 +32,8 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . # . #
             # # . # .
             `)
+        basic.pause(50)
+        basic.clearScreen()
     } else {
         stop()
     }
