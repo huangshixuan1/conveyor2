@@ -21,30 +21,15 @@ radio.onReceivedNumber(function (receivedNumber) {
     }
 })
 function turn_right () {
-    sensors.DDMmotor(
-    AnalogPin.P12,
-    1,
-    AnalogPin.P2,
-    255
-    )
+    pins.digitalWritePin(DigitalPin.P1, 0)
 }
 function stop () {
-    sensors.DDMmotor(
-    AnalogPin.P12,
-    1,
-    AnalogPin.P2,
-    0
-    )
+    pins.digitalWritePin(DigitalPin.P1, 90)
 }
 function close () {
     pins.servoWritePin(AnalogPin.P1, 0)
 }
 function turn_left () {
-    sensors.DDMmotor(
-    AnalogPin.P12,
-    0,
-    AnalogPin.P2,
-    255
-    )
+    pins.digitalWritePin(DigitalPin.P1, 180)
 }
 radio.setGroup(173)
